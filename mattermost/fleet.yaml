@@ -1,5 +1,13 @@
-defaultNamespace: mattermost-operator
+namespace: mattermost
 helm:
+  releaseName: mattermost-release
   repo: https://helm.mattermost.com
-  chart: mattermost/mattermost-operator
-  # releaseName: 
+  chart: mattermost-team-edition
+  values:
+    mysql:
+      enabled: true
+      mysqlUser: "mmuser"
+      mysqlPassword: "mmuser_password"
+    ingress:
+      enabled: true
+      host: mattermost.example.com
