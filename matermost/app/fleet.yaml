@@ -1,0 +1,5 @@
+defaultNamespace: mattermost-operator
+helm:
+  repo: https://helm.mattermost.com
+  chart: mattermost
+  releaseName: mattermost-operator
