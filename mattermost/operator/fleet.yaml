@@ -11,3 +11,7 @@ helm:
     ingress:
       enabled: true
       host: mattermost.example.com
+    persistence:
+      storageClass: "longhorn" # Name of your StorageClass
+      accessMode: ReadWriteOnce
+      size: 1Gi
