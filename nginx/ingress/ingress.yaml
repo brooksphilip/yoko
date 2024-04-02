@@ -1,0 +1,19 @@
+___
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-app
+  namespace: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: nginx.yoko.dev
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
